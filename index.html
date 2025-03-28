@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA Psicológa</title>
+    <style>
+        body,html{
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            background-color: #D9CEC1;
+        }
+        main{
+            position: absolute;
+            background-color: #BFB2A3;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 50%;
+            height: 90%;
+            aspect-ratio: 9/16;
+            border-radius: 2.5vh;
+        }
+        h1{
+            position: absolute;
+            display: inline;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 5%;
+            font-size: 4.5vh;
+            color: #403B31;
+        }
+        #Text{
+            position: absolute;
+            width: 90%;
+            aspect-ratio: 13/10;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 35%;
+            resize: none;
+            font-size: 2.5vh;
+            border-radius: 1vh;
+            background-color: #D9CEC1;
+            outline: none;
+        }
+        #Send{
+            width: 17%;
+            height: 5%;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            left: 87.5%;
+            top: 58.5%;
+            border-radius: 1vh;
+            border: none;
+            font-size: 2vh;
+            background-color: #8C7C6D;
+            color: #403B31;
+            font-weight: bolder;
+        }
+        #Send:hover{
+            font-size: 2.5vh;
+            width: 19%;
+            height: 6%;
+            
+        }
+        img{
+            padding: 0.5%;
+            position: absolute;
+            width: 10%;
+            top: 75%;
+            left: 5%;
+            border-radius: 50%;
+            border: solid 2px #403B31;
+            transform: translate(0%,-50%);
+            display: none;
+        }
+        #Answer{
+            position: absolute;
+            top: 75%;
+            left: 20%;
+            transform: translate(0%,-50%);
+            font-size: 4vh;
+            margin: 0px;
+            display: none;
+            color: #403B31;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>IA Psicóloga</h1>
+        <textarea id="Text" placeholder="Desabafe aqui..."></textarea>
+        <button id="Send" onclick="Send()">Enviar</button>
+        <img src="ai.png" id="Image">
+        <p id="Answer">...</p>
+    </main>
+    <script>
+        var Send = () => {
+            var Text = document.getElementById("Text")
+            var Image = document.getElementById("Image")
+            var Answer = document.getElementById("Answer")
+
+            if(Text.value != ""){
+                Text.value = ""
+                Image.style.display = "inline"
+                Answer.style.display = "inline"
+                Answer.innerHTML = "."
+                setTimeout(() => {
+                    Answer.innerHTML = ".."
+                }, 1000)
+                setTimeout(() => {
+                    Answer.innerHTML = "..."
+                }, 2000)
+                setTimeout(() => {
+                    Answer.innerHTML = "."
+                }, 3000)
+                setTimeout(() => {
+                    Answer.innerHTML = ".."
+                }, 4000)
+                setTimeout(() => {
+                    Answer.innerHTML = "..."
+                }, 5000)
+                setTimeout(() => {
+                    Answer.innerHTML = "É foda"
+                }, 6000)
+            }
+        }
+    </script>
+</body>
+</html>
